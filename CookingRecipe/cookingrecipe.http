@@ -1,0 +1,31 @@
+@cookingrecipe_HostAddress = http://localhost:5209
+
+GET {{cookingrecipe_HostAddress}}/api/recipes/search?ingredients=rice,beans&max=5
+Accept: application/json
+
+###
+
+POST {{cookingrecipe_HostAddress}}/api/recipes/suggest-by-ingredients
+Content-Type: application/json
+
+{
+  "ingredients": ["tomato", "onion", "rice"],
+  "max": 5
+}
+
+###
+
+GET {{cookingrecipe_HostAddress}}/api/recipes/favorites
+Accept: application/json
+
+###
+
+GET {{cookingrecipe_HostAddress}}/api/searchhistory
+Accept: application/json
+
+###
+
+GET {{cookingrecipe_HostAddress}}/health
+Accept: application/json
+
+###

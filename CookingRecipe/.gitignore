@@ -1,0 +1,41 @@
+# Build outputs
+bin/
+obj/
+temp_build/
+build-verify/
+.tmp-msbuild*/
+
+# User/IDE files
+.vs/
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+run.out.log
+run.err.log
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+
+# Local secrets/config
+appsettings.Local.json
+appsettings.*.local.json
+
+# Node leftovers (if frontend is added later)
+node_modules/
+dist/
+dist-ssr/
+*.local

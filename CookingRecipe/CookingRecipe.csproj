@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>cookingrecipe-3d0df7f5-e5f8-4f86-b0f0-c3e6f28af4b2</UserSecretsId>
+    <DefaultItemExcludes>$(DefaultItemExcludes);CookingRecipe.Tests\**;temp_build\**;build-verify\**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StackExchange.Redis" Version="2.9.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="CookingRecipe.Tests\**\*.cs" />
+    <Content Remove="CookingRecipe.Tests\**\*" />
+    <EmbeddedResource Remove="CookingRecipe.Tests\**\*" />
+    <None Remove="CookingRecipe.Tests\**\*" />
+    <Compile Remove="temp_build\**\*.cs;build-verify\**\*.cs" />
+    <Content Remove="temp_build\**\*;build-verify\**\*" />
+    <EmbeddedResource Remove="temp_build\**\*;build-verify\**\*" />
+    <None Remove="temp_build\**\*;build-verify\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Data\nigerian_recipes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
