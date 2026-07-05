@@ -48,6 +48,18 @@ export const getById = async (id) => {
   return handleResponse(response);
 };
 
+export const searchYouTubeVideos = async (query, max = 4, options = {}) => {
+  const params = new URLSearchParams({
+    query,
+    max: String(max),
+  });
+  const response = await fetch(`${API_BASE_URL}/api/youtube/search?${params.toString()}`, {
+    credentials: "include",
+    signal: options.signal,
+  });
+  return handleResponse(response);
+};
+
 export const getFavorites = async () => {
   const response = await fetch(`${API_BASE_URL}/api/recipes/favorites`, {
     credentials: "include",

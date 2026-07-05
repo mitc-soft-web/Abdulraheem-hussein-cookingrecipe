@@ -423,6 +423,89 @@ img {
   color: var(--slate-700);
   line-height: 1.65;
 }
+.video-section {
+  margin-top: 16px;
+  border: 1px solid var(--blue-100);
+  border-radius: 14px;
+  padding: 16px;
+  background: var(--white);
+}
+
+.video-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.video-section h3 {
+  color: var(--blue-900);
+  font-size: 1.08rem;
+}
+
+.video-eyebrow {
+  color: var(--blue-700);
+  margin-bottom: 4px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.video-card {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  border: 1px solid var(--blue-100);
+  border-radius: 12px;
+  padding: 10px;
+  background: #f8fbff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(26, 74, 156, 0.12);
+}
+
+.video-card img {
+  height: 74px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: var(--blue-50);
+}
+
+.video-card h4 {
+  color: var(--blue-900);
+  font-size: 0.94rem;
+  line-height: 1.35;
+  margin-bottom: 4px;
+  overflow-wrap: anywhere;
+}
+
+.video-card p {
+  color: var(--slate-500);
+  font-size: 0.82rem;
+  margin-bottom: 7px;
+}
+
+.video-card span {
+  color: #d82323;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.video-status {
+  border: 1px dashed var(--blue-100);
+  border-radius: 12px;
+  padding: 14px;
+  color: var(--slate-700);
+  background: #f8fbff;
+}
 
 body.dark-mode {
   background: linear-gradient(155deg, #081428 0%, #0c1d36 40%, #102749 100%);
@@ -478,7 +561,8 @@ body.dark-mode .empty-state {
 }
 
 body.dark-mode .recipe-card,
-body.dark-mode .detail-card {
+body.dark-mode .detail-card,
+body.dark-mode .video-section {
   background: #0d2445;
   border-color: #265089;
 }
@@ -489,6 +573,25 @@ body.dark-mode .tip-card {
 }
 
 body.dark-mode .tip-card p {
+  color: #c1d2f2;
+}
+body.dark-mode .video-section h3,
+body.dark-mode .video-card h4 {
+  color: #f4f7ff;
+}
+
+body.dark-mode .video-eyebrow {
+  color: #93bbff;
+}
+
+body.dark-mode .video-card,
+body.dark-mode .video-status {
+  background: #0f2a4f;
+  border-color: #2b568f;
+}
+
+body.dark-mode .video-card p,
+body.dark-mode .video-status {
   color: #c1d2f2;
 }
 
@@ -579,6 +682,13 @@ body.dark-mode .spinner {
   .home-toolbar {
     flex-direction: column;
     align-items: stretch;
+  }
+  .video-card {
+    grid-template-columns: 1fr;
+  }
+
+  .video-card img {
+    height: 150px;
   }
 
   .detail-image {
