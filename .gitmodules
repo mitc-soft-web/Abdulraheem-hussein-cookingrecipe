@@ -1,0 +1,3 @@
+[submodule "CookingRecipe"]
+	path = CookingRecipe
+	url = https://github.com/Kfroc123/CookingRecipe.git
